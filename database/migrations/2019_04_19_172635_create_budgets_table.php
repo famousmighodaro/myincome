@@ -19,16 +19,17 @@ class CreateBudgetsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('name');
             $table->integer('total_amount');
-            $table->string('budget_type');
+           
+            $table->string('budget_type_id');
             $table->decimal('interval_payment')->default(0);
             $table->integer('total_paid')->default(0);
             $table->integer('opened_payment')->default(0);
             $table->boolean('completed_payment')->default(false);
-            $table->smallInteger('payment_month')->default(null);
-            $table->smallInteger('payment_day')->default(null);
-            $table->date('start_date')->default(null);
-            $table->date('end_date')->default(null);
-            $table->unsignedInteger('number_of_months')->default(null);
+            $table->smallInteger('payment_month')->default(NULL);
+            $table->smallInteger('payment_day')->default(NULL);
+            $table->date('start_date')->default(NULL);
+            $table->date('end_date')->default(NULL);
+            $table->unsignedInteger('number_of_months')->default(NULL);
             
             $table->timestamps();
         });
