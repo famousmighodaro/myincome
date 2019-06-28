@@ -4,6 +4,7 @@ function hideDates(dates){
 		dates[1].style.display="none";	
 		dates[2].style.display="none";
 		dates[3].style.display="none";
+		paid[0].style.display="none";
 
 }
 
@@ -32,10 +33,11 @@ function select()
 			dates[1].style.display="block";
 			dates[3].style.display="block";	
 		}else if(x.value==='1'){
+			hideDates(dates);
 			paid[0].style.display="block";
 		}  else{
 			hideDates(dates);
-			paid[0].style.display="none";
+			
 		}
 	});
 }
@@ -83,5 +85,5 @@ if (x.value==='3' || x.value==='4') {
 			paid[0].style.display="none";
 		}
 select();
-receivedDay();
+
 

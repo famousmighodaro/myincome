@@ -35,7 +35,7 @@
 			        	<div class="form-group paid">
 			        		<label>Paid</label>
 							<label class="switch">
-							  <input type="checkbox" checked name="paid">
+							  <input type="checkbox" name="paid">
 							  <span class="slider round"></span>
 							</label>
 						</div>

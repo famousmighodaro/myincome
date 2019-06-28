@@ -45,6 +45,16 @@
 				        </div>
 		        	</div>
 
+		        	<div class="col-lg-1">
+			        	<div class="form-group paid">
+			        		<label>Paid</label>
+							<label class="switch">
+							  <input type="checkbox" name="paid">
+							  <span class="slider round"></span>
+							</label>
+						</div>
+					</div>
+
 			        	<div class="col-lg-2 dates">
 		        		<div class="orm-group" data-date-format="mm-dd-yyyy">
 		        			 <label for="startDate">State date</label>
@@ -53,7 +63,6 @@
 		        		</div>
 		        	</div>
 		        	<div class="col-lg-2 dates">
-
 		        		<div class="form-group" data-date-format="mm-dd-yyyy">
 		        			 <label for="endDate">End date</label>
 		        			<input type="text" width="200" class="form-control" placeholder="yyyy-mm-dd" autocomplete="off" id="endDate" name="end_date" value="{{old('end_date', $budget->end_date ?? null)}}"/>
