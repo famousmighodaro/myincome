@@ -83,7 +83,7 @@
                 <td>{{$count++}}</td>
                 <td>{{$budget->name}}</td>
                 <td>{{$budget->total_amount}}</td>
-                <td>{{$budget->budgetType->name}}</td>
+                <td>{{(isset($budget->budget_type_id))?$budget->budgetType->name:''}}</td>
                 <td>{{$budget->total_paid}}</td>
                 <td>{{$budget->opened_payment}}</td>
                 <td>

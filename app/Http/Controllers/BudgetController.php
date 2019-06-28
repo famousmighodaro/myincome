@@ -51,7 +51,7 @@ class BudgetController extends Controller
         
          $request->request->add(['user_id'=>$random]);
        
-       
+   
        $rules =[
            'budget_category_id'=>'numeric',
             'name'=>'required|string|min:3 ', 
@@ -62,7 +62,6 @@ class BudgetController extends Controller
             'total_amount'=>'required|numeric',
             'payment_month'=>'required_if:payment_type,==,yearly|sometimes|nullable|alpha_num',
             'payment_day'=>'required_if:payment_type,==,yearly|required_if:payment_type,==,monthly|sometimes|nullable|alpha_num',
-            'recurring'=>'sometimes|boolean',
             'budget_type_id'=>'required|alpha_num|min:1|max:10',
             'interval_amount'=>'sometimes|nullable|numeric',            
             'start_date'=>'nullable|required_if:recurring,==,true|date',

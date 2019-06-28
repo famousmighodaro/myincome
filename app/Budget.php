@@ -10,7 +10,7 @@ class Budget extends Model
     
     protected $fillable=[
         'budget_category_id', 'user_id', 'name', 'total_amount', 'budget_type_id','start_date', 'end_date',
-        'recurring', 'total_paid', 'opened_payment', 'completed_payment', 'payment_interval',
+        'payment_day', 'payment_month', 'total_paid', 'opened_payment', 'completed_payment', 'payment_interval',
         'number_of_months', 'interval_amount'
     ];
 

@@ -18,8 +18,7 @@ class CreateBudgetsTable extends Migration
             $table->unsignedInteger('budget_category_id')->default(0);
             $table->unsignedInteger('user_id');
             $table->string('name');
-            $table->integer('total_amount');
-           
+            $table->integer('total_amount');     
             $table->string('budget_type_id');
             $table->decimal('interval_payment')->default(0);
             $table->integer('total_paid')->default(0);

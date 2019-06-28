@@ -12,10 +12,10 @@
 				    <label for="totalAmount">Budget category</label>
 				    <select class="form-control" name="budget_category_id">
 				    	@foreach($budgetCategories as $category)
-				    		<option value="{{$category->id}}"  selected="{{
+				    		<option value="{{$category->id}}"  {{
 				    											(strtolower(old('budget_category_id', $budget->budget_category_id))==strtolower($category->id) 
 				    														)?'selected':''
-				    											}}">
+				    											}}>
 				    											{{$category->name}}
 
 				    		</option>
@@ -27,15 +27,15 @@
 		        		<div class="form-group">
 				            <label for="incomeType">Budget type</label>
 				           
-				                <select class="form-control" id="budgetType" name="budget_type_id" >
-				                	<option value="select" >Select budget type</option>
+				                <select class="form-control" id="budgetAndIncomeType" name="budget_type_id" >
+				                	<option value="" >Select budget type</option>
 								    	@foreach($budgetTypes as $index => $budgetType)
 								    		
 								    		<option value=
 								    			"{{$budgetType->id}}" 
 								    			{{
 								    				(strtolower(old('budget_type'))==strtolower($budgetType->id) 
-								    				|| strtolower($budget->budget_type)==strtolower($budgetType->id))?
+								    				|| strtolower($budget->budget_type_id)==strtolower($budgetType->id))?
 								    				'selected':''
 								    			}}>{{$budgetType->name}}
 								    		</option>
@@ -65,8 +65,8 @@
 		        			 <label for="paymentMonth">Payment month</label >
 		        				<select class="form-control" id="paymentMonth" name="payment_month">
 		        					<option value="">Select month</option>
-		        					@foreach($months as $index => $month)
-		        						<option value="{{$index}}" {{(strtolower(old('received_month'))==strtolower($index) || strtolower($budget->received_month)==strtolower($index))? 'selected':''}}>{{$month}}</option>
+		        					@foreach($months as $month)
+		        						<option value="{{$month->id}}" {{(strtolower(old('payment_month'))==strtolower($month->id) || strtolower($budget->payment_month)==strtolower($month->id))? 'selected':''}}>{{$month->name}}</option>
 		        					@endforeach
 
 		        				</select>
@@ -78,8 +78,8 @@
 		        			 <label for="paymentDate">Payment day</label>
 		        				<select class="form-control" id="paymentDays" name="payment_day">
 		        					<option value="">select day</option>
-		        					@foreach($days as $index => $day)
-		        						<option value="{{$index}}" {{(strtolower(old('received_day'))==strtolower($index)|| strtolower($budget->received_day)==strtolower($index))?'selected':''}}>{{$day}}</option>
+		        					@foreach($days as  $day)
+		        						<option value="{{$day->id}}" {{(old('payment_day')==($day->id)|| ($budget->payment_day)==strtolower($day->id))?'selected':''}}>{{$day->days_no}}</option>
 		        					@endforeach
 		        				</select>
 		        		</div>

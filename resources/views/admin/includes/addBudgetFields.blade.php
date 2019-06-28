@@ -14,7 +14,7 @@
 				            <label for="incomeType">Budget type</label>
 				           
 				                <select class="form-control" id="budgetAndIncomeType" name="budget_type_id" >
-				                	<option value="select" >Select budget type</option>
+				                	<option value="" >Select budget type</option>
 								    	@foreach($budgetTypes as $budgetType)
 								    		
 								    		<option value=
@@ -60,8 +60,8 @@
 		        			 <label for="paymentMonth">Payment month</label >
 		        				<select class="form-control" id="paymentMonth" name="payment_month">
 		        					<option value="">Select month</option>
-		        					@foreach($months as $index => $month)
-		        						<option value="{{$index}}" {{(strtolower(old('received_month'))==strtolower($index))? 'selected':''}}>{{$month->name}}</option>
+		        					@foreach($months as  $month)
+		        						<option value="{{$month->id}}" {{(strtolower(old('received_month'))==strtolower($month->id))? 'selected':''}}>{{$month->name}}</option>
 		        					@endforeach
 
 		        				</select>
@@ -73,8 +73,8 @@
 		        			 <label for="paymentDate">Payment day</label>
 		        				<select class="form-control" id="paymentDays" name="payment_day">
 		        					<option value="">select day</option>
-		        					@foreach($days as $index => $day)
-		        						<option value="{{$index}}" {{(strtolower(old('received_day'))==strtolower($index))?'selected':''}}>{{$day->id}}</option>
+		        					@foreach($days as $day)
+		        						<option value="{{$day->id}}" {{(strtolower(old('received_day'))==($day->id))?'selected':''}}>{{$day->id}}</option>
 		        					@endforeach
 		        				</select>
 		        		</div>
