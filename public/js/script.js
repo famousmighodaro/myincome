@@ -3,8 +3,11 @@ function hideDates(dates){
 		dates[0].style.display="none";
 		dates[1].style.display="none";	
 		dates[2].style.display="none";
-		dates[3].style.display="none";
-		paid[0].style.display="none";
+		dates[3].style.display="none";	
+		if (typeof(paid[0]) != 'undefined' && paid != null)
+		{
+		  paid[0].style.display="none";
+		}
 
 }
 
@@ -13,7 +16,7 @@ function select()
 
 
 
-	var x = document.getElementById('budgetAndIncomeType');
+	var x = document.getElementById('budgetIncomeAndSavingType');
 	var dates = document.getElementsByClassName('dates');
 	var months = document.getElementsByClassName('receivedMonth');
 	var paid=document.getElementsByClassName('paid');
@@ -34,7 +37,10 @@ function select()
 			dates[3].style.display="block";	
 		}else if(x.value==='1'){
 			hideDates(dates);
-			paid[0].style.display="block";
+			if (typeof(paid[0]) != 'undefined' && paid != null)
+			{
+			  paid[0].style.display="block";
+			}
 		}  else{
 			hideDates(dates);
 			
@@ -61,7 +67,7 @@ function select()
 }*/
 
 var paid=document.getElementsByClassName('paid');
-var x = document.getElementById('budgetAndIncomeType');
+var x = document.getElementById('budgetIncomeAndSavingType');
 	var dates = document.getElementsByClassName('dates');
 	var months = document.getElementsByClassName('receivedMonth');
 if (x.value==='3' || x.value==='4') {
@@ -82,7 +88,10 @@ if (x.value==='3' || x.value==='4') {
 			paid[0].style.display="block";
 		} else{
 			hideDates(dates);
-			paid[0].style.display="none";
+			if (typeof(paid[0]) != 'undefined' && paid != null)
+			{
+			  paid[0].style.display="none";
+			}
 		}
 select();
 

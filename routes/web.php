@@ -55,4 +55,8 @@ Route::get('/admin/income/{income}/edit', 'IncomeController@edit');
 Route::patch('/admin/income/{income}', 'IncomeController@update');
 Route::delete('admin/income/{income}', 'IncomeController@destroy');
 
+
+Route::get('/admin/savings', 'SavingController@index');
+Route::post('/admin/saving', 'SavingController@store');
+
 //Route::get('/admin/panel', 'Controller@index');

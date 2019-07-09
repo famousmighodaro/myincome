@@ -42,7 +42,7 @@
                   <ul>
                     <li><a href="/admin/incomes">Incomes</a></li>
                     <li><a href="/admin/budgets">Budget</a></li>
-                    <li><a href="">Savings</a></li>
+                    <li><a href="/admin/savings">Savings</a></li>
                     <li><a href="">Transactions</a></li>
                     
                   </ul>

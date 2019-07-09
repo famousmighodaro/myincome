@@ -37,20 +37,20 @@ class Budget extends Model
    }
 
 
-public function setUserIdAttribute($value)
-{
-    $this->attributes['user_id'] = $value;
-}
+    public function setUserIdAttribute($value)
+    {
+        $this->attributes['user_id'] = $value;
+    }
 
 
-public function budgetType()
-{
-  return $this->belongsTo(PaymentAndIncomeType::class, 'budget_type_id', 'id');
-}
+    public function budgetType()
+    {
+      return $this->belongsTo(PaymentAndIncomeType::class, 'budget_type_id', 'id');
+    }
 
 
-public function sumTotalAmount()
-{
-  
-}
+    public function sumTotalAmount()
+    {
+      
+    }
 }

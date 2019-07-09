@@ -61,7 +61,7 @@ class BudgetController extends Controller
             'opened_payment'=>'numeric',
             'total_amount'=>'required|numeric',
             'payment_month'=>'required_if:budget_type_id,5|sometimes|nullable|alpha_num',
-            'payment_day'=>'required_if:budget_type_id,|required_if:budget_type_id,2,3,4,5|sometimes|nullable|alpha_num',
+            'payment_day'=>'required_if:budget_type_id,2,3,4,5|sometimes|nullable|alpha_num',
             'budget_type_id'=>'required|alpha_num|min:1|max:10',
             'interval_amount'=>'sometimes|nullable|numeric',            
             'start_date'=>'nullable|required_if:budget_type_id,2,3,4,5|date',
