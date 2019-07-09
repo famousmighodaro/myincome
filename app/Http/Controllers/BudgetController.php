@@ -60,12 +60,12 @@ class BudgetController extends Controller
             'completed_payment'=>'numeric',
             'opened_payment'=>'numeric',
             'total_amount'=>'required|numeric',
-            'payment_month'=>'required_if:payment_type,==,yearly|sometimes|nullable|alpha_num',
-            'payment_day'=>'required_if:payment_type,==,yearly|required_if:payment_type,==,monthly|sometimes|nullable|alpha_num',
+            'payment_month'=>'required_if:budget_type_id,5|sometimes|nullable|alpha_num',
+            'payment_day'=>'required_if:budget_type_id,|required_if:budget_type_id,2,3,4,5|sometimes|nullable|alpha_num',
             'budget_type_id'=>'required|alpha_num|min:1|max:10',
             'interval_amount'=>'sometimes|nullable|numeric',            
-            'start_date'=>'nullable|required_if:recurring,==,true|date',
-            'end_date'=>'nullable|required_if:recurring,==,true|date',
+            'start_date'=>'nullable|required_if:budget_type_id,2,3,4,5|date',
+            'end_date'=>'nullable|required_if:budget_type_id,2,3,4,5|date',
        ];
 
         $validatedAttributes = request()->validate($rules);
@@ -115,10 +115,10 @@ class BudgetController extends Controller
             'total_amount'=>'required|numeric',
             'budget_category_id'=>'required|string',
             'recurring'=>'sometimes|boolean',
-            'payment_interval'=>'required_if:recurring,==,true|nullable|string|max:10',
+            'payment_interval'=>'required_if:budget_type_id,5|nullable|string|max:10',
             'interval_amount'=>'sometimes|nullable|numeric',            
-            'start_date'=>'nullable|required_if:recurring,==,true|date',
-            'end_date'=>'nullable|required_if:recurring,==,true|date',
+            'start_date'=>'nullable|required_if:budget_type_id,2,3,4,5|date',
+            'end_date'=>'nullable|required_if:budget_type_id,2,3,4,5|date',
        ];
 
        $validatedAttributes = request()->validate($rules);
